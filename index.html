@@ -87,6 +87,29 @@
       transition: opacity .4s ease;
       pointer-events: none;
     }
+        /* ===== Faixa inferior ===== */
+    .credit-bar{
+      width:100%;
+      text-align:center;
+      background:#000;
+      padding:10px 0 14px;
+      font-size:0.9rem;
+      color:#ffe5c7;
+      letter-spacing:0.3px;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+    .credit-bar a{
+      color:var(--accent);
+      font-weight:700;
+      text-decoration:none;
+      margin-left:4px;
+      transition:color .2s ease, opacity .2s ease;
+    }
+    .credit-bar a:hover{
+      color:var(--accent-soft-2);
+      opacity:0.85;
+    }
+
   </style>
 </head>
 
@@ -121,25 +144,30 @@
 
   <div class="banners">
     <a href="https://wa.me/557581913891" target="_blank" class="desktop-banner"><img src="img/banner.png" alt="Banner 1" /></a>
-    <a href="" target="_blank" class="desktop-banner"><img src="img/banner2.png" alt="Banner 2" /></a>
-    <a href="" target="_blank" class="desktop-banner"><img src="img/banner3.png" alt="Banner 3" /></a>
-     <a href="" target="_blank" class="desktop-banner">
+    <a href="site.html"  class="desktop-banner"><img src="img/banner2.png" alt="Banner 2" /></a>
+    <a href="site.html"  class="desktop-banner"><img src="img/banner3.png" alt="Banner 3" /></a>
+     <a href="site.html"  class="desktop-banner">
       <img src="img/banner4.png" alt="Banner 4" />
     </a>
 
-    <a href="" target="_blank" class="mobile-banner"><img src="img/banner1.png" alt="Banner 1 Mobile" /></a>
-    <a href="" target="_blank" class="mobile-banner"><img src="img/banner22.png" alt="Banner 2 Mobile" /></a>
-    <a href="" target="_blank" class="mobile-banner"><img src="img/banner33.png" alt="Banner 3 Mobile" /></a>
-  <a href="" target="_blank" class="mobile-banner">
+    <a href="https://wa.me/557581913891" target="_blank" class="mobile-banner"><img src="img/banner1.png" alt="Banner 1 Mobile" /></a>
+    <a href="site.html"  class="mobile-banner"><img src="img/banner22.png" alt="Banner 2 Mobile" /></a>
+    <a href="site.html"  class="mobile-banner"><img src="img/banner33.png" alt="Banner 3 Mobile" /></a>
+  <a href="site.html"  class="mobile-banner">
       <img src="img/banner44.png" alt="Banner 4 Mobile" />
     </a>
   </div>
 
-  <footer>
-    © Copyright 2025 MICHEL BRASIL DECOR. Todos os direitos reservados. <br />
+    <footer>
+    © <span id="year"></span> Michel Brasil Decor. Todos os direitos reservados.
   </footer>
-  <!-- ========== FIM DO CONTEÚDO ========== -->
 
+  <!-- ===== Faixa inferior de crédito ===== -->
+  <div class="credit-bar">
+    Desenvolvido por 
+    <a href="https://wa.me/557581973628" target="_blank" rel="noopener">FUTURA DESIGN</a>
+  </div>
+<br><br>
   <script>
     const LOADER_TIMEOUT = 2500;
     window.addEventListener('load', () => {
