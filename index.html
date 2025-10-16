@@ -9,49 +9,53 @@
   <link rel="icon" href="img/favicon.png" type="image/png">
 
   <style>
-    /* ===================== BANNERS (SEU CSS ORIGINAL) ===================== */
+    /* ===================== BASE ORIGINAL ===================== */
     body {
-      background-color: #000000; /* fundo alterado */
+      background-color: #000000;
     }
 
     .banners a img {
       display: block;
-      margin-bottom: 10px; /* reduz o espaço entre os banners */
+      margin-bottom: 10px;
     }
 
     .desktop-banner { display: block; }
     .mobile-banner { display: none; }
+
     @media (max-width: 768px) {
       .desktop-banner { display: none; }
       .mobile-banner { display: block; }
     }
 
-    /* ===================== LOADER (AJUSTADO) ===================== */
     :root{
-      --logo-size: 140px;       /* Largura/altura da logo no loader */
-      --bar-extra: 40px;        /* Quanto a barra é maior que a logo */
-      --bar-height: 6px;        /* Altura da barra */
-      --bar-color: #d6c6ae;     /* Amarelo da logo */
+      --logo-size: 140px;
+      --bar-extra: 40px;
+      --bar-height: 6px;
+      --bar-color: #d6c6ae;
     }
+
     .loader-wrap{
       position: fixed;
       inset: 0;
       z-index: 9999;
       display: grid;
       place-items: center;
-      background: #000000; /* fundo preto */
+      background: #000000;
     }
+
     .loader-inner{
       text-align: center;
       width: fit-content;
       font-family: 'Montserrat', sans-serif;
     }
+
     .loader-logo img{
       width: var(--logo-size);
       height: var(--logo-size);
       object-fit: contain;
       animation: fadeIn .8s ease-out forwards;
     }
+
     .loader-bar{
       position: relative;
       width: calc(var(--logo-size) + var(--bar-extra));
@@ -61,33 +65,33 @@
       background: rgba(255,255,255,.15);
       overflow: hidden;
     }
+
     .loader-fill{
       position: absolute;
       inset: 0;
       background: var(--bar-color);
-      transform-origin: left;   /* cresce agora a partir da esquerda */
+      transform-origin: left;
       transform: scaleX(0);
       animation: fillLtoR 2.5s ease-in-out forwards;
     }
+
     .loader-text{
       margin-top: 10px;
       color: rgba(255,255,255,.85);
       animation: fadeIn .8s ease-out forwards;
     }
+
     body.loading > *:not(#loader){ display: none; }
-    @keyframes fillLtoR{
-      to{ transform: scaleX(1); }
-    }
-    @keyframes fadeIn{
-      from{ opacity: 0; transform: translateY(6px); }
-      to{ opacity: 1; transform: translateY(0); }
-    }
+
+    @keyframes fillLtoR{ to{ transform: scaleX(1); } }
+    @keyframes fadeIn{ from{ opacity: 0; transform: translateY(6px); } to{ opacity: 1; transform: translateY(0); } }
+
     .loader-wrap.fade-out{
       opacity: 0;
       transition: opacity .4s ease;
       pointer-events: none;
     }
-        /* ===== Faixa inferior ===== */
+
     .credit-bar{
       width:100%;
       text-align:center;
@@ -98,6 +102,7 @@
       letter-spacing:0.3px;
       border-top:1px solid rgba(255,255,255,0.05);
     }
+
     .credit-bar a{
       color:var(--accent);
       font-weight:700;
@@ -105,11 +110,94 @@
       margin-left:4px;
       transition:color .2s ease, opacity .2s ease;
     }
+
     .credit-bar a:hover{
       color:var(--accent-soft-2);
       opacity:0.85;
     }
 
+    /* ===================== SESSÃO SOBRE ===================== */
+    .sobre-section {
+      background: url("img/bg1.png") center/cover no-repeat;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 6%;
+      gap: 20px; /* menor espaçamento entre colunas */
+    }
+
+    .sobre-image {
+      flex: 0 0 20%;
+      text-align: center;
+    }
+
+    .sobre-image img {
+      width: 100%;
+      max-width: 260px; /* logo menor no desktop */
+      height: auto;
+    }
+
+    .sobre-container {
+      flex: 0 0 80%;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .sobre-container h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .sobre-container h2 span {
+      color: #d6c6ae;
+    }
+
+    .sobre-container p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #f1f1f1;
+      margin-bottom: 18px;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .sobre-section {
+        flex-direction: column;
+        background: url("img/bg2.png") center/cover no-repeat;
+        padding: 80px 24px 60px;
+        text-align: center;
+      }
+
+      .sobre-image {
+        flex: none;
+        width: 100%;
+        margin-bottom: 35px;
+      }
+
+      .sobre-image img {
+        max-width: 180px; /* logo ainda menor no mobile */
+      }
+
+      .sobre-container {
+        flex: none;
+        text-align: center;
+        max-width: 90%;
+      }
+
+      .sobre-container h2 {
+        font-size: 1.9rem;
+        margin-bottom: 18px;
+      }
+
+      .sobre-container p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+    }
   </style>
 </head>
 
@@ -118,8 +206,7 @@
   <div id="loader" class="loader-wrap">
     <div class="loader-inner">
       <div class="loader-logo">
-        <!-- Coloque sua logo em img/logo.png -->
-        <img src="img/logo.png" alt="Logo K2 Business" />
+        <img src="img/logo.png" alt="Logo Michel Decor Brasil" />
       </div>
       <div class="loader-bar">
         <span class="loader-fill"></span>
@@ -127,9 +214,8 @@
       <p class="loader-text">Carregando...</p>
     </div>
   </div>
-  <!-- ========== FIM LOADER ========== -->
 
-  <!-- ========== SEU CONTEÚDO ORIGINAL ========== -->
+  <!-- ========== HERO ORIGINAL ========== -->
   <div class="hero">
     <div class="logo-container">
       <img src="img/logo.png" alt="Logo" class="logo" />
@@ -142,32 +228,52 @@
     <div class="arrow"><font size="3">Clique e acesse ↓</font></div>
   </div>
 
+  <!-- ========== BANNERS ORIGINAIS ========== -->
   <div class="banners">
     <a href="https://wa.me/557581913891" target="_blank" class="desktop-banner"><img src="img/banner.png" alt="Banner 1" /></a>
     <a href="site.html"  class="desktop-banner"><img src="img/banner2.png" alt="Banner 2" /></a>
     <a href="site.html"  class="desktop-banner"><img src="img/banner3.png" alt="Banner 3" /></a>
-     <a href="site.html"  class="desktop-banner">
-      <img src="img/banner4.png" alt="Banner 4" />
-    </a>
+    <a href="site.html"  class="desktop-banner"><img src="img/banner4.png" alt="Banner 4" /></a>
 
     <a href="https://wa.me/557581913891" target="_blank" class="mobile-banner"><img src="img/banner1.png" alt="Banner 1 Mobile" /></a>
     <a href="site.html"  class="mobile-banner"><img src="img/banner22.png" alt="Banner 2 Mobile" /></a>
     <a href="site.html"  class="mobile-banner"><img src="img/banner33.png" alt="Banner 3 Mobile" /></a>
-  <a href="site.html"  class="mobile-banner">
-      <img src="img/banner44.png" alt="Banner 4 Mobile" />
-    </a>
+    <a href="site.html"  class="mobile-banner"><img src="img/banner44.png" alt="Banner 4 Mobile" /></a>
   </div>
 
-    <footer>
+  <!-- ========== SESSÃO SOBRE ========== -->
+  <section class="sobre-section">
+    <div class="sobre-image">
+      <img src="img/logo-metal.png" alt="Logo decorativa" />
+    </div>
+
+    <div class="sobre-container">
+      <h2><span>Sobre</span> Michel Brasil</h2>
+      <p>
+        Iniciando sua trajetória ainda jovem, Michel sempre foi apaixonado por design, arte e decoração de interiores.
+        Sua missão é transformar espaços em experiências estéticas únicas, combinando elegância, técnica e sensibilidade.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor euismod lectus, vitae suscipit libero 
+        condimentum non. Vivamus in dictum magna. Curabitur blandit est sit amet dolor commodo, ut pharetra enim luctus.
+      </p>
+      <p>
+        Donec mattis magna sed nisl porttitor, ut laoreet nisi bibendum. Sed consequat mi nec risus tincidunt, eget sodales 
+        risus facilisis. Integer id eros vitae ligula gravida gravida ac sed velit.
+      </p>
+    </div>
+  </section>
+  <!-- ========== FIM SESSÃO SOBRE ========== -->
+
+  <footer>
     © <span id="year"></span> Michel Brasil Decor. Todos os direitos reservados.
   </footer>
 
-  <!-- ===== Faixa inferior de crédito ===== -->
   <div class="credit-bar">
     Desenvolvido por 
     <a href="https://wa.me/557581973628" target="_blank" rel="noopener">FUTURA DESIGN</a>
   </div>
-<br><br>
+
   <script>
     const LOADER_TIMEOUT = 2500;
     window.addEventListener('load', () => {
@@ -180,6 +286,7 @@
         }, 450);
       }, LOADER_TIMEOUT);
     });
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
