@@ -10,21 +10,18 @@
 
   <style>
     /* ===================== BASE ORIGINAL ===================== */
-    body {
-      background-color: #000000;
-    }
+    body { background-color: #000000; color:#fff; font-family: "Montserrat", sans-serif; }
 
     .banners a img {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 10px; /* não força width/height para não distorcer banners */
     }
 
     .desktop-banner { display: block; }
-    .mobile-banner { display: none; }
-
+    .mobile-banner  { display: none; }
     @media (max-width: 768px) {
       .desktop-banner { display: none; }
-      .mobile-banner { display: block; }
+      .mobile-banner  { display: block; }
     }
 
     :root{
@@ -32,30 +29,36 @@
       --bar-extra: 40px;
       --bar-height: 6px;
       --bar-color: #d6c6ae;
+      /* Scroll */
+      --scroll-thumb:#d6c6ae; /* bege */
+      --scroll-track:#111;
     }
 
+    /* ===== Scrollbar bege (não afeta layout) ===== */
+    /* Chrome/Edge/Safari/Android/iOS */
+    ::-webkit-scrollbar{ width:10px; height:10px; }
+    ::-webkit-scrollbar-track{ background:var(--scroll-track); }
+    ::-webkit-scrollbar-thumb{
+      background:var(--scroll-thumb);
+      border-radius:999px;
+      border:2px solid var(--scroll-track);
+    }
+    ::-webkit-scrollbar-thumb:hover{ background:#e2d6c3; }
+    /* Firefox */
+    html{ scrollbar-width: thin; scrollbar-color: var(--scroll-thumb) var(--scroll-track); }
+
+    /* ===================== LOADER ===================== */
     .loader-wrap{
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      display: grid;
-      place-items: center;
-      background: #000000;
+      position: fixed; inset: 0; z-index: 9999;
+      display: grid; place-items: center; background: #000000;
     }
-
-    .loader-inner{
-      text-align: center;
-      width: fit-content;
-      font-family: 'Montserrat', sans-serif;
-    }
-
+    .loader-inner{ text-align: center; width: fit-content; font-family: 'Montserrat', sans-serif; }
     .loader-logo img{
       width: var(--logo-size);
       height: var(--logo-size);
       object-fit: contain;
       animation: fadeIn .8s ease-out forwards;
     }
-
     .loader-bar{
       position: relative;
       width: calc(var(--logo-size) + var(--bar-extra));
@@ -65,23 +68,15 @@
       background: rgba(255,255,255,.15);
       overflow: hidden;
     }
-
     .loader-fill{
-      position: absolute;
-      inset: 0;
-      background: var(--bar-color);
-      transform-origin: left;
-      transform: scaleX(0);
+      position: absolute; inset: 0; background: var(--bar-color);
+      transform-origin: left; transform: scaleX(0);
       animation: fillLtoR 2.5s ease-in-out forwards;
     }
+    .loader-text{ margin-top: 10px; color: rgba(255,255,255,.85); animation: fadeIn .8s ease-out forwards; }
 
-    .loader-text{
-      margin-top: 10px;
-      color: rgba(255,255,255,.85);
-      animation: fadeIn .8s ease-out forwards;
-    }
-
-    body.loading > *:not(#loader){ display: none; }
+    /* ✅ Corrige bug de scroll: apenas bloqueia rolagem durante o loader */
+    html.loading, body.loading { overflow: hidden; }
 
     @keyframes fillLtoR{ to{ transform: scaleX(1); } }
     @keyframes fadeIn{ from{ opacity: 0; transform: translateY(6px); } to{ opacity: 1; transform: translateY(0); } }
@@ -104,7 +99,7 @@
     }
 
     .credit-bar a{
-      color:var(--accent);
+      color:#d6c6ae;
       font-weight:700;
       text-decoration:none;
       margin-left:4px;
@@ -112,11 +107,11 @@
     }
 
     .credit-bar a:hover{
-      color:var(--accent-soft-2);
+      color:#f1e2c6;
       opacity:0.85;
     }
 
-    /* ===================== SESSÃO SOBRE ===================== */
+    /* ===================== SESSÃO SOBRE (sem mexer no restante) ===================== */
     .sobre-section {
       background: url("img/bg1.png") center/cover no-repeat;
       color: #fff;
@@ -124,7 +119,7 @@
       align-items: center;
       justify-content: center;
       padding: 100px 6%;
-      gap: 20px; /* menor espaçamento entre colunas */
+      gap: 20px; /* espaçamento entre colunas */
     }
 
     .sobre-image {
@@ -134,7 +129,7 @@
 
     .sobre-image img {
       width: 100%;
-      max-width: 260px; /* logo menor no desktop */
+      max-width: 260px; /* logo desktop */
       height: auto;
     }
 
@@ -145,25 +140,20 @@
     }
 
     .sobre-container h2 {
-      font-family: 'Montserrat', sans-serif;
       font-size: 2.3rem;
       font-weight: 700;
       margin-bottom: 25px;
     }
 
-    .sobre-container h2 span {
-      color: #d6c6ae;
-    }
+    .sobre-container h2 span { color: #d6c6ae; }
 
     .sobre-container p {
-      font-family: 'Montserrat', sans-serif;
       font-size: 1rem;
       line-height: 1.8;
       color: #f1f1f1;
       margin-bottom: 18px;
     }
 
-    /* ===== MOBILE ===== */
     @media (max-width: 768px) {
       .sobre-section {
         flex-direction: column;
@@ -178,9 +168,7 @@
         margin-bottom: 35px;
       }
 
-      .sobre-image img {
-        max-width: 180px; /* logo ainda menor no mobile */
-      }
+      .sobre-image img { max-width: 180px; } /* logo mobile */
 
       .sobre-container {
         flex: none;
@@ -188,19 +176,13 @@
         max-width: 90%;
       }
 
-      .sobre-container h2 {
-        font-size: 1.9rem;
-        margin-bottom: 18px;
-      }
-
-      .sobre-container p {
-        font-size: 0.95rem;
-        line-height: 1.7;
-      }
+      .sobre-container h2 { font-size: 1.9rem; margin-bottom: 18px; }
+      .sobre-container p  { font-size: 0.95rem; line-height: 1.7; }
     }
   </style>
 </head>
 
+<!-- Mantém a classe loading para bloquear scroll só durante o loader -->
 <body class="loading">
   <!-- ========== LOADER ========== -->
   <div id="loader" class="loader-wrap">
@@ -214,6 +196,7 @@
       <p class="loader-text">Carregando...</p>
     </div>
   </div>
+  <!-- ========== FIM LOADER ========== -->
 
   <!-- ========== HERO ORIGINAL ========== -->
   <div class="hero">
@@ -276,16 +259,27 @@
 
   <script>
     const LOADER_TIMEOUT = 2500;
+
+    // (opcional) garante a classe no <html> também, sem mexer no markup
+    document.documentElement.classList.add('loading');
+
     window.addEventListener('load', () => {
       const loader = document.getElementById('loader');
+
       setTimeout(() => {
         loader.classList.add('fade-out');
         setTimeout(() => {
           loader.remove();
+          // libera scroll
           document.body.classList.remove('loading');
+          document.documentElement.classList.remove('loading');
+          // segurança extra
+          document.body.style.overflowY = 'auto';
+          document.documentElement.style.overflowY = 'auto';
         }, 450);
       }, LOADER_TIMEOUT);
     });
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
