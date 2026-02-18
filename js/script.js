@@ -286,6 +286,7 @@
         };
 
         const attemptAutoplay = async () => {
+          if (userActivatedAudio) return;
           try {
             video.muted = true;
             video.loop = true;
@@ -294,6 +295,80 @@
             await video.play();
           } catch (_) {
             // ignore
+          }
+        };
+
+        const seekToStart = () => {
+          try {
+            video.currentTime = 0;
+          } catch (_) {
+            // ignore
+          }
+        };
+
+        const forceAudioOn = () => {
+          userActivatedAudio = true;
+          video.muted = false;
+          video.defaultMuted = false;
+          video.removeAttribute('muted');
+          video.volume = 1;
+        };
+
+        const playFromStartWithAudio = () => {
+          video.loop = false;
+          video.controls = false;
+          video.playsInline = true;
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+
+          try {
+            video.pause();
+          } catch (_) {
+            // ignore
+          }
+
+          if (video.readyState >= 1) {
+            seekToStart();
+          } else {
+            video.addEventListener('loadedmetadata', seekToStart, { once: true });
+          }
+
+          forceAudioOn();
+
+          let playPromise = null;
+          try {
+            playPromise = video.play();
+          } catch (_) {
+            showPlayButton();
+            return;
+          }
+
+          // Reforça o desmute após iniciar (alguns navegadores “grudam” o muted do autoplay).
+          const reinforce = () => {
+            forceAudioOn();
+            if (video.muted) {
+              try {
+                video.muted = false;
+              } catch (_) {
+                // ignore
+              }
+            }
+          };
+
+          if (playPromise && typeof playPromise.then === 'function') {
+            playPromise
+              .then(() => {
+                reinforce();
+                hidePlayButton();
+              })
+              .catch(() => {
+                // Em clique do usuário, a intenção é tocar COM áudio.
+                // Se falhar, não fazemos fallback para mutado.
+                showPlayButton();
+              });
+          } else {
+            reinforce();
+            hidePlayButton();
           }
         };
 
@@ -307,25 +382,16 @@
           video.addEventListener('canplay', attemptAutoplay, { once: true });
         }
 
-        playButton.addEventListener('click', async () => {
-          userActivatedAudio = true;
-          video.loop = false;
-          video.controls = false;
-          video.playsInline = true;
-          video.muted = false;
-          video.volume = 1;
-          try {
-            await video.play();
-            hidePlayButton();
-          } catch (_) {
-            try {
-              video.muted = true;
-              await video.play();
-              hidePlayButton();
-            } catch (__) {
-              showPlayButton();
-            }
-          }
+        playButton.addEventListener('click', (event) => {
+          if (event && typeof event.stopPropagation === 'function') event.stopPropagation();
+          playFromStartWithAudio();
+        });
+
+        // Permite clicar no vídeo/frame (não só no botão).
+        frame.addEventListener('click', (event) => {
+          const target = event && event.target ? event.target : null;
+          if (target === playButton) return;
+          playFromStartWithAudio();
         });
 
         const onStop = () => {

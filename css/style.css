@@ -399,6 +399,57 @@ textarea {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
+/* Feixe de luz sutil (loop infinito) - apenas botões dourados */
+.btn-primary,
+.btn-nav {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after,
+.btn-nav::after {
+  content: "";
+  position: absolute;
+  top: -22%;
+  left: -60%;
+  width: 52%;
+  height: 144%;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.62;
+  filter: blur(14px);
+  mix-blend-mode: screen;
+  transform: translateX(-140%) skewX(-18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(17, 17, 17, 0.0) 30%,
+    rgba(255, 255, 255, 0.0) 40%,
+    rgba(255, 255, 255, 0.92) 50%,
+    rgba(255, 255, 255, 0.0) 60%,
+    rgba(17, 17, 17, 0.0) 70%,
+    transparent 100%
+  );
+  animation: btnLightSweep 3.7s linear 0s infinite;
+}
+
+@keyframes btnLightSweep {
+  0% {
+    transform: translateX(-160%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(260%) skewX(-18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary::after,
+  .btn-nav::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 .btn:hover {
   transform: translateY(-2px);
 }
