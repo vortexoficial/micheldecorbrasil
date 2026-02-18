@@ -55,7 +55,10 @@
         };
 
         const cssDuration = parseCssTimeToMs(getComputedStyle(loader).getPropertyValue('--loader-duration'));
-        const minDurationMs = Number.isFinite(cssDuration) ? cssDuration : 2500;
+        const baseDurationMs = Number.isFinite(cssDuration) ? cssDuration : 2500;
+        // Pequena folga para garantir que a barra seja percebida como 100% antes do fade-out.
+        // Em deploys muito rápidos (cache/CDN), sem isso o loader pode sumir visualmente "antes".
+        const minDurationMs = baseDurationMs + 180;
 
         let hideTimeout = 0;
         let cleanupTimeout = 0;
