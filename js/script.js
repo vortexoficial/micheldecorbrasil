@@ -60,6 +60,11 @@
         // Em deploys muito rápidos (cache/CDN), sem isso o loader pode sumir visualmente "antes".
         const minDurationMs = baseDurationMs + 180;
 
+        // Em páginas muito rápidas (cache), o evento `load` pode acontecer antes do primeiro rAF.
+        // Se agendarmos o hide antes de iniciar a animação da barra, ela pode não completar.
+        let hasBegun = false;
+        let pendingSchedule = false;
+
         let hideTimeout = 0;
         let cleanupTimeout = 0;
         let hasHidden = false;
@@ -80,6 +85,10 @@
         };
 
         const scheduleHide = () => {
+          if (!hasBegun) {
+            pendingSchedule = true;
+            return;
+          }
           if (hideTimeout) window.clearTimeout(hideTimeout);
           const now = nowMs();
           const elapsed = now - start;
@@ -90,12 +99,15 @@
         const begin = () => {
           start = nowMs();
           loader.classList.add('is-running');
+          hasBegun = true;
           scheduleHide();
         };
 
-        window.requestAnimationFrame(() => window.requestAnimationFrame(begin));
+        begin();
         window.addEventListener('load', scheduleHide, { once: true });
         window.addEventListener('pageshow', scheduleHide);
+
+        if (pendingSchedule) scheduleHide();
       }
 
       function setupActiveSectionIndicator() {
