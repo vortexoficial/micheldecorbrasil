@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Michel Brasil Decor | Decoração de Eventos Premium</title>
+	<meta
+		name="description"
+		content="Michel Brasil Decor cria cenários autorais para casamentos, aniversários e eventos premium, com direção criativa e execução impecável."
+	/>
+	<meta property="og:title" content="Michel Brasil Decor | Decoração de Eventos Premium" />
+	<meta
+		property="og:description"
+		content="Eventos com estética sofisticada, curadoria refinada e experiências visuais memoráveis."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="./assets/hero/hero-desktop.jpg" />
+	<meta property="og:locale" content="pt_BR" />
+	<link rel="icon" type="image/png" href="./assets/ui/favicon.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+		rel="stylesheet"
+	/>
+	<style>
+		body.is-loading {
+			overflow: hidden;
+		}
+
+		body.is-loading-lock {
+			overflow: hidden;
+		}
+
+		body.is-loading > :not(.site-loader) {
+			visibility: hidden;
+		}
+
+		.site-loader {
+			position: fixed;
+			inset: 0;
+			z-index: 3000;
+		}
+
+		.site-loader-bar {
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="is-loading is-loading-lock">
+	<div class="site-loader" role="status" aria-live="polite" aria-label="Carregando">
+		<div class="site-loader-inner" aria-hidden="true">
+			<img
+				class="site-loader-logo"
+				src="./assets/logo/logo-michel-brasil-decor.png"
+				alt=""
+				width="118"
+				height="44"
+				decoding="async"
+			/>
+			<div class="site-loader-bar" aria-hidden="true"></div>
+			<p class="site-loader-text">Decorações únicas e exclusivas</p>
+		</div>
+	</div>
+
+	<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+	<header class="header" id="inicio">
+		<nav class="floating-nav" aria-label="Menu principal">
+			<a class="brand-mini" href="#inicio" aria-label="Voltar ao início">
+				<img src="./assets/logo/logo-michel-brasil-decor.png" alt="Logo Michel Brasil Decor" width="118" height="44" />
+			</a>
+
+			<button class="menu-toggle" aria-expanded="false" aria-controls="menu-list" aria-label="Abrir menu">
+				<span></span><span></span><span></span>
+			</button>
+
+			<ul class="menu-list" id="menu-list">
+				<li><a href="#inicio" class="menu-link active">Início</a></li>
+				<li><a href="#sobre" class="menu-link">Sobre</a></li>
+				<li><a href="#servicos" class="menu-link">Serviços</a></li>
+				<li><a href="#portfolio" class="menu-link">Portfólio</a></li>
+				<li><a href="#parceiros" class="menu-link">Parceiros</a></li>
+				<li><a href="#depoimentos" class="menu-link">Depoimentos</a></li>
+				<li><a href="#contato" class="menu-link">Contato</a></li>
+			</ul>
+
+			<a class="btn btn-nav" href="#contato">Orçamento</a>
+		</nav>
+
+		<section class="hero" aria-label="Destaque principal">
+			<img
+				class="hero-mobile-logo"
+				src="./assets/logo/logo-michel-brasil-decor.png"
+				alt="Logo Michel Brasil Decor"
+				width="130"
+				height="48"
+				loading="lazy"
+			/>
+
+			<div class="hero-content" id="conteudo">
+				<div class="hero-layout">
+					<div class="hero-copy">
+						<h1>
+							Eventos que não<br class="hero-break-desktop" />
+							apenas encantam.<br class="hero-break-desktop" />
+							marcam para sempre.
+						</h1>
+						<p>
+							Decoração autoral para casamentos, aniversários e celebrações exclusivas, com direção criativa e execução impecável.
+						</p>
+						<div class="hero-actions">
+							<a class="btn btn-primary" href="#contato">Faça um orçamento</a>
+							<a class="btn btn-ghost" href="#portfolio">Ver portfólio</a>
+						</div>
+					</div>
+
+					<div class="hero-video" role="region" aria-label="Vídeo de apresentação">
+						<div class="hero-video-frame">
+							<video class="hero-video-el" autoplay muted loop playsinline preload="metadata">
+								<source src="./img/video.mp4" type="video/mp4" />
+							</video>
+							<button class="hero-video-play" type="button" aria-label="Reproduzir vídeo com áudio"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<main>
+		<section class="about section" id="sobre-detalhes">
+			<div class="container about-grid">
+				<div class="about-media">
+					<img src="./img/f1.png" alt="Imagem ilustrativa 1" width="520" height="640" loading="lazy" />
+					<img src="./img/f2.png" alt="Imagem ilustrativa 2" width="520" height="640" loading="lazy" />
+				</div>
+				<div class="about-content">
+					<h2 class="section-title">Metodologia, parcerias<br>& forma de trabalho</h2>
+					
+					<div class="method-cards-container">
+						<article class="method-card">
+							<div class="method-icon-box">
+								<svg viewBox="0 0 24 24" fill="none" class="method-icon" aria-hidden="true">
+									<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z" stroke="currentColor" stroke-width="1.5"/>
+								</svg>
+							</div>
+							<div class="method-text">
+								<h3>Processo Claro</h3>
+								<p>Briefing profundo, referências, conceito autoral e layout. Tudo é apresentado com direção criativa para intenção e unidade estética.</p>
+							</div>
+						</article>
+
+						<article class="method-card">
+							<div class="method-icon-box">
+								<svg viewBox="0 0 24 24" fill="none" class="method-icon" aria-hidden="true">
+									<path d="M8 12a4 4 0 0 1 4-4h2M16 12a4 4 0 0 1-4 4h-2M9 15l-1 1a4 4 0 0 0 6 6l1-1M15 9l1-1a4 4 0 0 0-6-6L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+								</svg>
+							</div>
+							<div class="method-text">
+								<h3>Curadoria de Parcerias</h3>
+								<p>Fornecedores alinhados com o padrão premium, prazos e acabamento. Garantia de consistência e experiência integrada.</p>
+							</div>
+						</article>
+
+						<article class="method-card">
+							<div class="method-icon-box">
+								<svg viewBox="0 0 24 24" fill="none" class="method-icon" aria-hidden="true">
+									<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</div>
+							<div class="method-text">
+								<h3>Execução Precisa</h3>
+								<p>Cronograma, logística e acompanhamento de montagem. Organização e transparência para uma entrega impecável.</p>
+							</div>
+						</article>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="services section" id="servicos">
+			<div class="container">
+				<h2 class="section-title">Serviços</h2>
+				<p class="section-intro">
+					Projetos personalizados com curadoria estética, planejamento estratégico e alto padrão de acabamento.
+				</p>
+				<div class="service-grid">
+					<article class="service-card">
+						<div class="service-icon-box">
+							<svg viewBox="0 0 24 24" fill="none" class="service-icon" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M6 3h12l4 6-10 13L2 9Z"/>
+								<path d="M11 3 8 9l4 13 4-13-3-6"/>
+								<path d="M2 9h20"/>
+							</svg>
+						</div>
+						<div class="service-info">
+							<h3>Casamentos</h3>
+							<p>Cenários autorais para cerimônias e recepções elegantes, traduzindo a essência do casal.</p>
+						</div>
+					</article>
+
+					<article class="service-card">
+						<div class="service-icon-box">
+							<svg viewBox="0 0 24 24" fill="none" class="service-icon" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
+							</svg>
+						</div>
+						<div class="service-info">
+							<h3>15 Anos & Bodas</h3>
+							<p>Conceitos exclusivos para celebrar marcos especiais com sofisticação e personalidade.</p>
+						</div>
+					</article>
+
+					<article class="service-card">
+						<div class="service-icon-box">
+							<svg viewBox="0 0 24 24" fill="none" class="service-icon" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="12" cy="12" r="10"/>
+								<path d="M2 12h20"/>
+								<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+							</svg>
+						</div>
+						<div class="service-info">
+							<h3>Social & Corporativo</h3>
+							<p>Ambientações de alto impacto para lançamentos de marcas, jantares e confraternizações.</p>
+						</div>
+					</article>
+
+					<article class="service-card">
+						<div class="service-icon-box">
+							<svg viewBox="0 0 24 24" fill="none" class="service-icon" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+								<path d="M3 9h18"/>
+								<path d="M9 21V9"/>
+							</svg>
+						</div>
+						<div class="service-info">
+							<h3>Projeto Cenográfico</h3>
+							<p>Design visual completo: do croqui à renderização 3D, garantindo previsibilidade e estética.</p>
+						</div>
+					</article>
+
+					<article class="service-card">
+						<div class="service-icon-box">
+							<svg viewBox="0 0 24 24" fill="none" class="service-icon" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+							</svg>
+						</div>
+						<div class="service-info">
+							<h3>Produção & Montagem</h3>
+							<p>Execução técnica rigorosa com equipe especializada, logística e acabamento premium.</p>
+						</div>
+					</article>
+
+					<article class="service-card">
+						<div class="service-icon-box">
+							<svg viewBox="0 0 24 24" fill="none" class="service-icon" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+							</svg>
+						</div>
+						<div class="service-info">
+							<h3>Consultoria Criativa</h3>
+							<p>Direcionamento estratégico para quem busca refinar escolhas e garantir harmonia visual.</p>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Nova Seção Descontraída com Vídeo -->
+		<section class="experience-cta section">
+			<div class="video-background">
+				<video autoplay muted loop playsinline class="bg-video">
+					<source src="./img/video2.mp4" type="video/mp4" />
+				</video>
+				<div class="video-overlay"></div>
+			</div>
+			
+			<div class="container experience-content">
+				<div class="experience-icon-wrap">
+					<div class="experience-icon">
+						<img src="./img/logo-metal.png" alt="" width="72" height="72" loading="lazy" decoding="async" aria-hidden="true" />
+					</div>
+				</div>
+				<div class="experience-body">
+					<h2 class="experience-title">Celebrar é criar memórias eternas.</h2>
+					<p class="experience-subtitle">
+						Do brinde inicial ao último detalhe da pista de dança, cuidamos de tudo para que você apenas aproveite o momento. Vamos planejar o inimaginável?
+					</p>
+					<a href="#contato" class="btn btn-primary btn-large">Realizar Orçamento</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="portfolio section" id="portfolio">
+			<div class="container">
+				<h2 class="section-title">Projetos que traduzem emoções em cenário</h2>
+				<p class="section-intro">
+					Assista aos detalhes ganharem vida e sinta a atmosfera de cada celebração.
+				</p>
+
+				<div class="reels-carousel" role="region" aria-label="Carrossel de vídeos">
+					<div class="reels-track" aria-label="Arraste ou role para o lado">
+						<article class="reel-card" aria-label="Vídeo 1">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c12.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 1"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 2">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c10.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 2"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 3">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c11.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 3"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 4">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c9.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 4"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 5">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c8.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 5"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 6">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c7.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 6"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 7">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c6.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 7"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 8">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c5.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 8"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 9">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c4.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 9"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 10">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c3.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 10"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 11">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c2.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 11"></button>
+						</article>
+
+						<article class="reel-card" aria-label="Vídeo 12">
+							<video class="reel-video" preload="metadata" playsinline muted loop>
+								<source src="./img/c1.mp4" type="video/mp4" />
+							</video>
+							<button class="reel-play" type="button" aria-label="Reproduzir vídeo 12"></button>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="partners section" id="parceiros">
+			<div class="container">
+				<h2 class="section-title">Rede de Parceiros Premium</h2>
+				<p class="section-intro">
+					Conectamos nossos clientes aos melhores fornecedores para uma experiência completa e integrada.
+				</p>
+				<p class="section-intro intro-secondary">
+					A excelência de um grande evento também está nas conexões certas. Por isso, reunimos parceiros selecionados para entregar uma experiência completa do início ao fim.
+				</p>
+
+				<div class="partner-grid">
+					<article class="partner-card">
+						<div class="partner-icon">
+							<svg viewBox="0 0 24 24" fill="none" class="icon-gold" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/>
+								<path d="M4 16s.5-1 2-1 2.5 1 4 1 2.5-1 4-1 2.5 1 4 1 2-1 2-1"/>
+								<path d="M2 21h20"/>
+								<path d="M7 8v2"/>
+								<path d="M12 8v2"/>
+								<path d="M17 8v2"/>
+								<path d="M7 4h.01"/>
+								<path d="M12 4h.01"/>
+								<path d="M17 4h.01"/>
+							</svg>
+						</div>
+						<div class="partner-info">
+							<h3>Bolos e Confeitaria</h3>
+							<p>Arte em açúcar com design exclusivo e sabores inesquecíveis.</p>
+						</div>
+					</article>
+
+					<article class="partner-card">
+						<div class="partner-icon">
+							<svg viewBox="0 0 24 24" fill="none" class="icon-gold" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="12" cy="12" r="10"/>
+								<path d="M8 12a4 4 0 1 0 8 0"/>
+							</svg>
+						</div>
+						<div class="partner-info">
+							<h3>Doces Finos</h3>
+							<p>Sofisticação e delicadeza para compor a mesa perfeita.</p>
+						</div>
+					</article>
+
+					<article class="partner-card">
+						<div class="partner-icon">
+							<svg viewBox="0 0 24 24" fill="none" class="icon-gold" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+								<path d="M8 11h8"/>
+								<path d="M12 7v8"/>
+							</svg>
+						</div>
+						<div class="partner-info">
+							<h3>Florais Especiais</h3>
+							<p>Arranjos botânicos que trazem vida e elegância ao ambiente.</p>
+						</div>
+					</article>
+
+					<article class="partner-card">
+						<div class="partner-icon">
+							<svg viewBox="0 0 24 24" fill="none" class="icon-gold" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M19 9l-7 7-7-7"/>
+								<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+							</svg>
+						</div>
+						<div class="partner-info">
+							<h3>Mobiliário Premium</h3>
+							<p>Acervo selecionado para conforto e estética impecável.</p>
+						</div>
+					</article>
+
+					<article class="partner-card">
+						<div class="partner-icon">
+							<svg viewBox="0 0 24 24" fill="none" class="icon-gold" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="12" cy="12" r="5"/>
+								<path d="M12 1v2"/>
+								<path d="M12 21v2"/>
+								<path d="M4.22 4.22l1.42 1.42"/>
+								<path d="M18.36 18.36l1.42 1.42"/>
+								<path d="M1 12h2"/>
+								<path d="M21 12h2"/>
+								<path d="M4.22 19.78l1.42-1.42"/>
+								<path d="M18.36 5.64l1.42-1.42"/>
+							</svg>
+						</div>
+						<div class="partner-info">
+							<h3>Iluminação Cênica</h3>
+							<p>Projetos de luz que valorizam cada detalhe da decoração.</p>
+						</div>
+					</article>
+
+					<article class="partner-card">
+						<div class="partner-icon">
+							<svg viewBox="0 0 24 24" fill="none" class="icon-gold" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+								<circle cx="12" cy="13" r="4"/>
+							</svg>
+						</div>
+						<div class="partner-info">
+							<h3>Foto e Filmagem</h3>
+							<p>Registros artísticos que eternizam a essência do evento.</p>
+						</div>
+					</article>
+				</div>
+
+				<aside class="partner-cta">
+					<p>
+						Quer ser parceiro da Michel Brasil Decor? Procuramos fornecedores com excelência, pontualidade e alto padrão de entrega.
+					</p>
+					<a href="https://wa.me/5575981913891?text=Ola%2C%20sou%20fornecedor%20e%20gostaria%20de%20ser%20parceiro%20da%20Michel%20Brasil%20Decor." target="_blank" class="btn btn-primary">Quero me tornar parceiro</a>
+				</aside>
+			</div>
+		</section>
+
+		<section class="about-michel section" id="sobre">
+			<div class="container about-michel-grid">
+				<div class="about-michel-side">
+					<div class="about-michel-content">
+						<p class="kicker">Sobre o Michel</p>
+						<h2 class="section-title">Há oito anos, transformo sonhos em cenários.</h2>
+						<p class="about-michel-lead">
+							A decoração sempre foi mais que um trabalho: é a minha forma de expressar arte, emoção e beleza. Desde cedo me encantei pelo universo das
+							festas, pelas combinações que encantam o olhar, pelas flores que trazem vida e pela elegância que torna cada detalhe inesquecível.
+						</p>
+						<p>
+							Com o tempo, construí uma identidade própria: sofisticada, atual e fiel às tendências, mas sempre com essência e alma. Hoje, tenho a honra de
+							ser reconhecido como o melhor decorador da minha cidade, um título que reflete não apenas talento, mas também dedicação, sensibilidade e amor
+							pelo que faço.
+						</p>
+					</div>
+
+					<div class="about-michel-highlight" aria-label="Propósito">
+						<p>
+							Cada projeto é único. Cada festa, uma nova história. E é com esse propósito que sigo criando experiências marcantes, cheias de estilo e
+							significado.
+						</p>
+					</div>
+				</div>
+
+				<div class="about-michel-panel" aria-label="Foto de Michel Brasil">
+					<img
+						src="./img/michel.png"
+						onerror="this.onerror=null;this.src='./assets/about/sobre-michel.jpg';"
+						alt="Michel Brasil"
+						width="720"
+						height="900"
+						loading="lazy"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section class="testimonials section" id="depoimentos">
+			<div class="container">
+				<div class="testimonials-header">
+					<h2 class="section-title">O que nossos clientes <span class="highlight">dizem</span></h2>
+					<div class="rating-display">
+						<span class="rating-number">5.0</span>
+						<div class="rating-stars">
+							★★★★★
+						</div>
+						<p class="rating-text">Baseado em 48 avaliações</p>
+					</div>
+				</div>
+
+				<div class="reviews-marquee">
+					<div class="reviews-track">
+						<!-- Card 1 -->
+						<article class="review-card">
+							<div class="review-header">
+								<div class="review-profile">
+									<div class="review-avatar" style="background-color: #8B4513;">C</div>
+									<div class="review-meta">
+										<h3>Camila Ribeiro</h3>
+										<span>Local Guide • 3 avaliações</span>
+									</div>
+								</div>
+								<svg viewBox="0 0 24 24" width="24" height="24" class="google-icon"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+							</div>
+							<div class="review-stars">★★★★★</div>
+							<p class="review-text">Michel superou todas as expectativas! A decoração do nosso casamento ficou simplesmente deslumbrante. Cada detalhe foi pensado com tanto carinho que os convidados não paravam de elogiar.</p>
+							<span class="review-time">há 2 meses</span>
+						</article>
+
+						<!-- Card 2 -->
+						<article class="review-card">
+							<div class="review-header">
+								<div class="review-profile">
+									<div class="review-avatar" style="background-color: #2F4F4F;">R</div>
+									<div class="review-meta">
+										<h3>Rafael Torres</h3>
+										<span>1 avaliação</span>
+									</div>
+								</div>
+								<svg viewBox="0 0 24 24" width="24" height="24" class="google-icon"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+							</div>
+							<div class="review-stars">★★★★★</div>
+							<p class="review-text">Profissionalismo impecável. Desde a primeira reunião até a desmontagem, tudo ocorreu perfeitamente. O projeto 3D nos deu segurança, mas ao vivo foi ainda mais impactante.</p>
+							<span class="review-time">há 5 meses</span>
+						</article>
+
+						<!-- Card 3 -->
+						<article class="review-card">
+							<div class="review-header">
+								<div class="review-profile">
+									<div class="review-avatar" style="background-color: #C71585;">F</div>
+									<div class="review-meta">
+										<h3>Fernanda Souza</h3>
+										<span>Local Guide • 12 avaliações</span>
+									</div>
+								</div>
+								<svg viewBox="0 0 24 24" width="24" height="24" class="google-icon"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+							</div>
+							<div class="review-stars">★★★★★</div>
+							<p class="review-text">Uma sensibilidade artística rara! O Michel conseguiu captar exatamente o que queríamos e transformou o salão em um cenário de filme. Recomendamos de olhos fechados.</p>
+							<span class="review-time">há 1 mês</span>
+						</article>
+
+						<!-- Card 4 -->
+						<article class="review-card">
+							<div class="review-header">
+								<div class="review-profile">
+									<div class="review-avatar" style="background-color: #DAA520;">H</div>
+									<div class="review-meta">
+										<h3>Henrique Martins</h3>
+										<span>4 avaliações</span>
+									</div>
+								</div>
+								<svg viewBox="0 0 24 24" width="24" height="24" class="google-icon"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+							</div>
+							<div class="review-stars">★★★★★</div>
+							<p class="review-text">Contratei para o evento corporativo da minha empresa e o resultado foi sofisticado e elegante, exatamente como a marca precisava. Pontualidade britânica.</p>
+							<span class="review-time">há 3 semanas</span>
+						</article>
+
+						<!-- Card 5 -->
+						<article class="review-card">
+							<div class="review-header">
+								<div class="review-profile">
+									<div class="review-avatar" style="background-color: #4B0082;">J</div>
+									<div class="review-meta">
+										<h3>Juliana N.</h3>
+										<span>Local Guide • 8 avaliações</span>
+									</div>
+								</div>
+								<svg viewBox="0 0 24 24" width="24" height="24" class="google-icon"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+							</div>
+							<div class="review-stars">★★★★★</div>
+							<p class="review-text">Foi a melhor escolha que fizemos. Além do talento incrível, o Michel é uma pessoa maravilhosa, super tranquilo e organizado. Ajudou a reduzir nossa ansiedade!</p>
+							<span class="review-time">há 6 meses</span>
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="contact section" id="contato">
+			<div class="container contact-wrap">
+				<div class="contact-box">
+					<div class="contact-icon-heart">
+						<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+						</svg>
+					</div>
+					<div class="contact-copy centered">
+						<h2 class="section-title">Seu evento merece um cenário à altura da sua história.</h2>
+						<p>Fale com nossa equipe e receba uma proposta personalizada.</p>
+						<div class="contact-actions centered-actions">
+							<!-- EDITÁVEL: substitua pelo WhatsApp oficial -->
+							<a class="btn btn-primary" href="https://wa.me/5575981913891?text=Ola%2C%20gostaria%20de%20solicitar%20um%20orcamento%20via%20WhatsApp." target="_blank" rel="noopener noreferrer">Solicitar orçamento no WhatsApp</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sessão Mentoria -->
+		<section class="mentorship section" id="mentoria">
+			<div class="container mentorship-wrap">
+				<div class="mentorship-header">
+					<span class="mentorship-tag">Mentoria Exclusiva</span>
+					<h2 class="section-title">Do zero ao primeiro evento</h2>
+					<p class="mentorship-description">
+						Transforme sua paixão por decoração em um negócio lucrativo. Com mais de 8 anos de mercado, 
+						vou te guiar pessoalmente pelos bastidores da profissão, ensinando desde a concepção criativa 
+						até a execução técnica impecável.
+					</p>
+				</div>
+				
+				<div class="mentorship-image-box">
+					<div class="mentorship-frame">
+						<img src="./img/mentoria.jpg" alt="Mentoria com Michel Brasil" class="mentorship-img" width="580" height="680" loading="lazy" />
+					</div>
+					<div class="mentorship-badge">
+						<span>Vagas Limitadas</span>
+					</div>
+				</div>
+
+				<div class="mentorship-details">
+					<ul class="mentorship-benefits">
+						<li>
+							<div class="check-icon">✓</div>
+							<span>Técnicas avançadas de montagem e estrutura</span>
+						</li>
+						<li>
+							<div class="check-icon">✓</div>
+							<span>Gestão de fornecedores e logística</span>
+						</li>
+						<li>
+							<div class="check-icon">✓</div>
+							<span>Como precificar e vender seus projetos</span>
+						</li>
+					</ul>
+
+					<a href="https://wa.me/5575981913891?text=Tenho%20interesse%20na%20mentoria%20Do%20Zero%20ao%20Primeiro%20Evento" target="_blank" class="btn btn-primary mentorship-cta">
+						Quero me tornar um decorador profissional
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer section">
+		<div class="container">
+			<div class="footer-top">
+				<div class="footer-brand-col">
+					<img src="./assets/logo/logo-michel-brasil-decor.png" alt="Logo Michel Brasil Decor" width="180" height="auto" loading="lazy" class="footer-logo" />
+					<p class="footer-bio">
+						Transformando sonhos em cenários inesquecíveis. Cada detalhe é pensado para refletir a essência da sua celebração.
+					</p>
+					<div class="footer-social-links">
+						<a href="https://instagram.com/michelbrasildecor" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+						</a>
+						<a href="https://wa.me/5575981913891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+						</a>
+					</div>
+				</div>
+
+				<div class="footer-nav-col">
+					<h3>Navegação</h3>
+					<ul>
+						<li><a href="#inicio">Início</a></li>
+						<li><a href="#sobre">Sobre</a></li>
+						<li><a href="#portfolio">Portfólio</a></li>
+						<li><a href="#mentoria">Mentoria</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-contact-col">
+					<h3>Atendimento</h3>
+					<p class="footer-contact-item">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+						(75) 98191-3891
+					</p>
+					<p class="footer-contact-item">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+						contato@michelbrasil.com.br
+					</p>
+					<p class="footer-address">
+						Atendemos em todo o mundo.<br>Based in Feira de Santana, BA
+					</p>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p class="copyright">© 2026 Michel Brasil Decor. Todos os direitos reservados.</p>
+				<p class="dev-credit">Desenvolvido por <a href="https://wa.me/5511964956563?text=Ola%2C%20gostaria%20de%20um%20orcamento%21" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none; font-weight: 600;">FuturaDesign</a></p>
+			</div>
+		</div>
+	</footer>
+
+	<div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização da imagem" hidden>
+		<button type="button" class="lightbox-close" aria-label="Fechar imagem">×</button>
+		<img src="" alt="Imagem ampliada do portfólio" width="1200" height="1600" />
+	</div>
+
+	<a href="https://wa.me/5575981913891?text=Ola%2C%20gostaria%20de%20um%20orcamento%21" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+		<svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+	</a>
+
+	<script src="./js/script.js" defer></script>
+</body>
+</html>
