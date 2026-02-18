@@ -56,9 +56,6 @@
           return unit === 's' ? amount * 1000 : amount;
         };
 
-        const cssDuration = parseCssTimeToMs(getComputedStyle(loader).getPropertyValue('--loader-duration'));
-        const baseDurationMs = Number.isFinite(cssDuration) ? cssDuration : 1600;
-
         const prefersReducedMotion = !!(
           window.matchMedia &&
           typeof window.matchMedia === 'function' &&
@@ -67,6 +64,10 @@
 
         let pageReady = false;
         let progressDone = prefersReducedMotion;
+
+        // Usado apenas como fallback; será armado quando a animação realmente começar.
+        let progressFallbackTimeout = 0;
+        let hasProgressStarted = prefersReducedMotion;
 
         let hideTimeout = 0;
         let cleanupTimeout = 0;
@@ -88,7 +89,9 @@
         };
 
         const tryHide = () => {
-          if (pageReady && progressDone) hide();
+          if (!pageReady || !progressDone) return;
+          // Garante que o frame do 100% seja pintado antes do fade-out.
+          window.requestAnimationFrame(() => window.requestAnimationFrame(hide));
         };
 
         const markPageReady = () => {
@@ -104,18 +107,41 @@
         const begin = () => {
           start = nowMs();
           loader.classList.add('is-running');
+        };
 
-          // Fallback de segurança: se o animationend não disparar por algum motivo,
-          // consideramos a barra concluída após a duração prevista + pequena folga.
-          if (hideTimeout) window.clearTimeout(hideTimeout);
-          hideTimeout = window.setTimeout(markProgressDone, baseDurationMs + 220);
+        const clearProgressFallback = () => {
+          if (progressFallbackTimeout) window.clearTimeout(progressFallbackTimeout);
+          progressFallbackTimeout = 0;
+        };
+
+        const armProgressFallbackFromComputedStyle = () => {
+          if (!barFill) return;
+          clearProgressFallback();
+
+          const durationMs = parseCssTimeToMs(getComputedStyle(barFill).animationDuration);
+          const delayMs = parseCssTimeToMs(getComputedStyle(barFill).animationDelay) ?? 0;
+          const d = Number.isFinite(durationMs) ? durationMs : parseCssTimeToMs(getComputedStyle(loader).getPropertyValue('--loader-duration'));
+          const duration = Number.isFinite(d) ? d : 1600;
+          const total = Math.max(0, delayMs + duration + 260);
+          progressFallbackTimeout = window.setTimeout(markProgressDone, total);
         };
 
         if (barFill && !prefersReducedMotion) {
           barFill.addEventListener(
+            'animationstart',
+            (event) => {
+              if (event && event.animationName && event.animationName !== 'loaderProgress') return;
+              hasProgressStarted = true;
+              armProgressFallbackFromComputedStyle();
+            },
+            { passive: true }
+          );
+
+          barFill.addEventListener(
             'animationend',
             (event) => {
               if (event && event.animationName && event.animationName !== 'loaderProgress') return;
+              clearProgressFallback();
               markProgressDone();
             },
             { once: true }
@@ -123,6 +149,19 @@
         }
 
         begin();
+
+        // Se a animação já estiver rodando (ou se o browser não disparar animationstart),
+        // armamos o fallback lendo o computedStyle assim que possível.
+        if (barFill && !prefersReducedMotion) {
+          window.requestAnimationFrame(() => {
+            if (hasProgressStarted) return;
+            const name = String(getComputedStyle(barFill).animationName || '');
+            if (name && name !== 'none') {
+              hasProgressStarted = true;
+              armProgressFallbackFromComputedStyle();
+            }
+          });
+        }
 
         if (document.readyState === 'complete') markPageReady();
         else window.addEventListener('load', markPageReady, { once: true });
