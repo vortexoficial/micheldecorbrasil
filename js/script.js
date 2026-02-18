@@ -39,6 +39,8 @@
           return;
         }
 
+        const barFill = loader.querySelector('.site-loader-bar-fill');
+
         const nowMs = () =>
           window.performance && typeof window.performance.now === 'function' ? window.performance.now() : Date.now();
 
@@ -55,15 +57,16 @@
         };
 
         const cssDuration = parseCssTimeToMs(getComputedStyle(loader).getPropertyValue('--loader-duration'));
-        const baseDurationMs = Number.isFinite(cssDuration) ? cssDuration : 2500;
-        // Pequena folga para garantir que a barra seja percebida como 100% antes do fade-out.
-        // Em deploys muito rápidos (cache/CDN), sem isso o loader pode sumir visualmente "antes".
-        const minDurationMs = baseDurationMs + 180;
+        const baseDurationMs = Number.isFinite(cssDuration) ? cssDuration : 1600;
 
-        // Em páginas muito rápidas (cache), o evento `load` pode acontecer antes do primeiro rAF.
-        // Se agendarmos o hide antes de iniciar a animação da barra, ela pode não completar.
-        let hasBegun = false;
-        let pendingSchedule = false;
+        const prefersReducedMotion = !!(
+          window.matchMedia &&
+          typeof window.matchMedia === 'function' &&
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        );
+
+        let pageReady = false;
+        let progressDone = prefersReducedMotion;
 
         let hideTimeout = 0;
         let cleanupTimeout = 0;
@@ -84,30 +87,46 @@
           }, 600);
         };
 
-        const scheduleHide = () => {
-          if (!hasBegun) {
-            pendingSchedule = true;
-            return;
-          }
-          if (hideTimeout) window.clearTimeout(hideTimeout);
-          const now = nowMs();
-          const elapsed = now - start;
-          const remaining = Math.max(0, minDurationMs - elapsed);
-          hideTimeout = window.setTimeout(hide, remaining);
+        const tryHide = () => {
+          if (pageReady && progressDone) hide();
+        };
+
+        const markPageReady = () => {
+          pageReady = true;
+          tryHide();
+        };
+
+        const markProgressDone = () => {
+          progressDone = true;
+          tryHide();
         };
 
         const begin = () => {
           start = nowMs();
           loader.classList.add('is-running');
-          hasBegun = true;
-          scheduleHide();
+
+          // Fallback de segurança: se o animationend não disparar por algum motivo,
+          // consideramos a barra concluída após a duração prevista + pequena folga.
+          if (hideTimeout) window.clearTimeout(hideTimeout);
+          hideTimeout = window.setTimeout(markProgressDone, baseDurationMs + 220);
         };
 
-        begin();
-        window.addEventListener('load', scheduleHide, { once: true });
-        window.addEventListener('pageshow', scheduleHide);
+        if (barFill && !prefersReducedMotion) {
+          barFill.addEventListener(
+            'animationend',
+            (event) => {
+              if (event && event.animationName && event.animationName !== 'loaderProgress') return;
+              markProgressDone();
+            },
+            { once: true }
+          );
+        }
 
-        if (pendingSchedule) scheduleHide();
+        begin();
+
+        if (document.readyState === 'complete') markPageReady();
+        else window.addEventListener('load', markPageReady, { once: true });
+        window.addEventListener('pageshow', markPageReady);
       }
 
       function setupActiveSectionIndicator() {

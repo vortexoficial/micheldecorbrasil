@@ -185,8 +185,7 @@ h6 {
   transition: none;
 }
 
-.site-loader-bar::before {
-  content: "";
+.site-loader-bar-fill {
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, var(--gold), var(--gold-strong));
@@ -197,7 +196,7 @@ h6 {
   backface-visibility: hidden;
 }
 
-.site-loader.is-running .site-loader-bar::before {
+.site-loader.is-running .site-loader-bar-fill {
   opacity: 1;
   transition: none;
   animation: loaderProgress var(--loader-duration) linear 0s 1 forwards;
@@ -318,6 +317,12 @@ h6 {
   }
 
   .site-loader-bar::before {
+    animation: none;
+    transform: none;
+    opacity: 0.7;
+  }
+
+  .site-loader-bar-fill {
     animation: none;
     transform: none;
     opacity: 0.7;
